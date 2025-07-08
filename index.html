@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay ₹30 - Shashank Kumar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+        crossorigin="anonymous">
+</head>
+<body style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px">
+  <h2>Pay ₹30 to Shashank Kumar</h2>
+  <div style="display:flex; flex-direction:column; gap:20px; margin-top:30px; width:100%; max-width:300px">
+    <a id="gpayLink" class="pure-button" style="background-color:#4285f4; color:white; font-size:18px; text-align:center">Pay with GPay</a>
+    <a id="phonepeLink" class="pure-button" style="background-color:#5b2d90; color:white; font-size:18px; text-align:center">Pay with PhonePe</a>
+    <a id="paytmLink" class="pure-button" style="background-color:#002970; color:white; font-size:18px; text-align:center">Pay with Paytm</a>
+  </div>
+
+  <script>
+    const name = encodeURIComponent("Shashank Kumar");
+    const upi = "9369933827@sbi";
+    const amt = "30.00";
+    const txnId = crypto.randomUUID().replace(/-/g, '').substring(0, 10);
+
+    document.getElementById('gpayLink').href = `tez://upi/pay?pa=${upi}&pn=${name}&tr=${txnId}&tn=${txnId}&am=${amt}&cu=INR`;
+    document.getElementById('phonepeLink').href = `phonepe://pay?pa=${upi}&pn=${name}&tr=${txnId}&tn=${txnId}&am=${amt}&cu=INR`;
+    document.getElementById('paytmLink').href = `paytmmp://pay?pa=${upi}&pn=${name}&tr=${txnId}&tn=${txnId}&am=${amt}&cu=INR`;
+  </script>
+</body>
+</html>
