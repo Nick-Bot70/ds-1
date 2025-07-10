@@ -18,14 +18,14 @@
   </div>
 
   <script>
-    const name = encodeURIComponent("Shashank Kumar");
+    const name = encodeURIComponent("Ff");
     const upi = "paytm.s1m6bne@pty";
     const amt = "30.00";
     const txnId = crypto.randomUUID().replace(/-/g, '').substring(0, 10);
 
     document.getElementById('gpayLink').href = `tez://upi/pay?pa=${upi}&pn=${name}&tr=${txnId}&tn=${txnId}&am=${amt}&cu=INR`;
     document.getElementById('phonepeLink').href = `phonepe://pay?pa=${upi}&pn=${name}&tr=${txnId}&tn=${txnId}&am=${amt}&cu=INR`;
-    document.getElementById('paytmLink').href = `paytmmp://cash_wallet?pa=paytm.s1m6bne@pty&pn=Shashank Kumar=G5QTrXKe&tr=G5QTrXKe&am=30&cu=INR&featuretype=money_transfer`
+    document.getElementById('paytmLink').href = `paytmmp://cash_wallet?pa=paytm.s1m6bne@pty&pn=Ff=G5QTrXKe&tr=G5QTrXKe&am=30&cu=INR&featuretype=money_transfer`
   </script>
 </body>
 </html>
